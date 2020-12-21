@@ -1,0 +1,71 @@
+{
+    "name": "webberman/laravel-setting",
+    "description": "Flexible settings package for laravel",
+    "keywords": [
+        "setting",
+        "settings",
+        "option",
+        "options",
+        "config",
+        "configuration",
+        "configurations"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/webberman/laravel-setting/issues",
+        "source": "https://github.com/webberman/laravel-setting"
+    },
+    "authors": [
+        {
+            "name": "Chibuzor Anyagha",
+            "homepage": "https://chibuzor.com",
+            "email": "hello@chibuzor.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2|^8.0",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "laravel/legacy-factories": "^1.0.4",
+        "orchestra/testbench": "^5.0|^6.0",
+        "phpunit/phpunit": "^8.0|^9.0"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {
+            "Webberman\\LaravelSetting\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Webberman\\LaravelSetting\\Tests\\":"tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Webberman\\LaravelSetting\\SettingServiceProvider"
+            ],
+            "aliases": {
+                "Webberman": "Webberman\\LaravelSetting\\SettingFacade"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable":true
+}
