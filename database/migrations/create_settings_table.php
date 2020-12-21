@@ -41,7 +41,7 @@ class CreateSettingsTable extends Migration
                 DB::table($this->tableName)->upsert([
                     $this->keyColumn        => $data['key'],
                     $this->valueColumn      => $data['value']?? NULL,
-                    $this->autoloadColumn   => (bool) $data['autoload']?? $this->autoloadDefault,
+                    $this->autoloadColumn   => (bool) ($data['autoload']?? $this->autoloadDefault),
                 ], $this->keyColumn);
             }
         }
